@@ -5,10 +5,11 @@ const adminroutes = require("./routes/admin");
 const shoproutes = require("./routes/shop");
 
 app.use(bodyParser.urlencoded({extended: false}));
-//before in nodejs we are using chunks and and parsing them and now it's just a 2 lines of code
 
-
-// this post will only work when user hits on button Add product
 app.use(adminroutes);
 app.use(shoproutes);
+app.use("/",(req,res,next)=>{
+    res.status(404).send("<h1>PAGE NOT FOUND<h1>")
+})
+
 app.listen(3000); 
