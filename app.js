@@ -7,13 +7,14 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use("/add-product",(req, res, next)=>{
 
-    res.send('<form action="/product" method="POST"><input type="text" name ="title"><button type="submit">ADD Product</button></form>')
+    res.send('<form action="/product" method="POST"><input type="text" name ="title"><input type="text" name="size"><button type="submit">ADD Product</button></form>')
 });
 
-app.use("/product",(req,res,next)=>{
-    console.log(req.body.title);
+app.post("/product",(req,res,next)=>{
+    console.log(req.body);
     res.redirect("/")
 })
+// this post will only work when user hits on button Add product
 
 app.use("/",(req, res, next)=>{
 
