@@ -1,5 +1,3 @@
-//node specific modules
-const http = require("http");
 //third party packages
 const express = require("express");
 const app = express();
@@ -16,5 +14,8 @@ app.use((req,res,next)=>{
 })
 
 
-const server = http.createServer(app)
-server.listen(3000);
+/* const server = http.createServer(app)
+server.listen(3000); 
+it internally doing the same as it is in the comment section
+*/
+app.listen(3000);
