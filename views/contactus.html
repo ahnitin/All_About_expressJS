@@ -15,20 +15,25 @@
         <nav class="main-header__nav">
             <ul class="main-header__item-list">
                 <li class="main-header__item"><a href="/">Shop</a></li>
-                <li class="main-header__item"><a class="active" href="/admin/add-product">Add Product</a></li>
-                <li class="main-header__item"><a href="/contactus">Contact Us</a></li>
+                <li class="main-header__item"><a href="/admin/add-product">Add Product</a></li>
+                <li class="main-header__item"><a class="active" href="/contactus">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <form class="product-form" action="/admin/add-product" method="POST">
+        <h1 style="text-align: center;">Book A CALL</h1>
+        <form class="product-form" action="/contactus" method="POST">
             <div class="form-control">
-                <label for="title">Title</label>
-                <input type="text" name="title" id="title">
+                <label for="name">User Name</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="form-control">
+                <label for="Email">Email Address</label>
+                <input type="email" name="email" id="email">
             </div>
 
-            <button type="submit">Add Product</button>
+            <button type="submit">Book A Call</button>
         </form>
     </main>
 </body>
