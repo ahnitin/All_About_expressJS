@@ -3,11 +3,9 @@ const path = require("path");
 
 const rootDir = require("../helper/path");
 const router = express.Router();
+const controlerAddProduct = require("../controlers/product");
 
-router.get("/add-product",(req, res, next)=>{
-
-    res.sendFile(path.join(rootDir,"views","add-product.html"))
-});
+router.get("/add-product",controlerAddProduct.getProduct);
 
 router.post("/add-product",(req,res,next)=>{
     console.log(req.body);

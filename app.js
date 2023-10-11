@@ -7,6 +7,7 @@ const app = express();
 const adminroutes = require("./routes/admin");
 const shoproutes = require("./routes/shop");
 const contactroutes = require("./routes/contactus");
+const controlerSuccess = require("./controlers/contact");
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(express.static(path.join(__dirname,"public")))
@@ -16,9 +17,7 @@ app.use(express.static(path.join(__dirname,"public")))
 app.use("/admin",adminroutes);
 app.use(shoproutes);
 app.use(contactroutes);
-app.use("/success",(req,res,next)=>{
-    res.status(200).sendFile(path.join(rootDir,"views","success.html"));
-})
+app.use("/success",controlerSuccess.contactusR);
 app.use("/",(req,res,next)=>{
     res.status(404).sendFile(path.join(rootDir,"views","404.html"))
 })
